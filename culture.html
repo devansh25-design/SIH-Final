@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Culture & Traditions | Bharat Heritage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradCult)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradCult)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradCult)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradCult)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradCult)" />
+                    <defs>
+                        <linearGradient id="goldGradCult" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html" class="active">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HEADER -->
+
+    <section class="explore-header">
+
+        <p class="section-label">
+            INDIA'S LIVING HERITAGE
+        </p>
+
+        <h1>Culture & Traditions</h1>
+
+        <p>
+            Discover the diverse food, art, dance and traditional
+            clothing that make India's cultural heritage unique.
+        </p>
+
+    </section>
+
+
+    <!-- CULTURE CATEGORIES -->
+
+    <section class="culture-section">
+
+        <div class="culture-tabs">
+
+            <button class="active" onclick="showCulture('food', this)">
+                🍛 Food
+            </button>
+
+            <button onclick="showCulture('art', this)">
+                🎨 Art & Crafts
+            </button>
+
+            <button onclick="showCulture('dance', this)">
+                💃 Dance & Music
+            </button>
+
+            <button onclick="showCulture('clothing', this)">
+                👗 Clothing
+            </button>
+
+        </div>
+
+
+        <div id="cultureContainer" class="culture-grid">
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>🇮🇳 Bharat Heritage Explorer</h3>
+
+        <p>
+            Celebrating India's rich heritage and traditions.
+        </p>
+
+    </footer>
+
+
+    <script src="js/culture.js"></script>
+
+</body>
+
+</html>

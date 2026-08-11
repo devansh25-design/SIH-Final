@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heritage Quiz | Bharat Heritage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradQuiz)" stroke-width="3"
+                        fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradQuiz)" stroke-width="1.5"
+                        stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradQuiz)"
+                        stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradQuiz)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradQuiz)" />
+                    <defs>
+                        <linearGradient id="goldGradQuiz" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="active nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+
+    </header>
+
+
+    <!-- QUIZ HEADER -->
+
+    <section class="explore-header">
+
+        <p class="section-label">
+            TEST YOUR KNOWLEDGE
+        </p>
+
+        <h1>
+            Heritage Quiz
+        </h1>
+
+        <p>
+            How well do you know India's rich heritage,
+            culture and traditions?
+        </p>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section class="quiz-section">
+
+        <div class="quiz-card">
+
+
+            <!-- PROGRESS -->
+
+            <div class="quiz-top">
+
+                <span id="questionNumber">
+                    Question 1 of 10
+                </span>
+
+                <span id="scoreDisplay">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div id="progressBar" class="progress-bar">
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <h2 id="question">
+                Question will appear here
+            </h2>
+
+
+            <!-- OPTIONS -->
+
+            <div id="options" class="options">
+            </div>
+
+
+            <!-- NEXT -->
+
+            <button id="nextButton" class="next-btn" onclick="nextQuestion()" disabled>
+
+                Next Question →
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div id="resultCard" class="result-card">
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+            <h2>
+                Quiz Completed!
+            </h2>
+
+            <p>
+                Your final score:
+            </p>
+
+            <div id="finalScore" class="final-score">
+                0 / 10
+            </div>
+
+            <p id="resultMessage">
+            </p>
+
+            <button class="restart-btn" onclick="restartQuiz()">
+
+                🔄 Play Again
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>
+            🇮🇳 Bharat Heritage Explorer
+        </h3>
+
+        <p>
+            Celebrating India's rich heritage
+            and traditions.
+        </p>
+
+    </footer>
+
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

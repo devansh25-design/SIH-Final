@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Festivals & Traditions | Bharat Heritage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradFest)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradFest)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradFest)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradFest)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradFest)" />
+                    <defs>
+                        <linearGradient id="goldGradFest" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html" class="active">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+
+    </header>
+
+
+    <section class="explore-header">
+
+        <p class="section-label">
+            LIVING HERITAGE
+        </p>
+
+        <h1>Festivals & Traditions</h1>
+
+        <p>
+            Discover the colorful festivals and cultural traditions
+            celebrated across different regions of India.
+        </p>
+
+    </section>
+
+
+    <section class="festival-section">
+
+        <div class="search-box">
+
+            <input type="text" id="festivalSearch" placeholder="Search festivals...">
+
+        </div>
+
+
+        <div class="filter-buttons">
+
+            <button onclick="filterFestivals('all')">
+                All
+            </button>
+
+            <button onclick="filterFestivals('north')">
+                North India
+            </button>
+
+            <button onclick="filterFestivals('south')">
+                South India
+            </button>
+
+            <button onclick="filterFestivals('west')">
+                West India
+            </button>
+
+            <button onclick="filterFestivals('east')">
+                East India
+            </button>
+
+            <button onclick="filterFestivals('central')">
+                Central India
+            </button>
+
+        </div>
+
+
+        <div id="festivalContainer" class="festival-grid">
+        </div>
+
+    </section>
+
+
+    <!-- DETAILS MODAL -->
+
+    <div id="festivalModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" onclick="closeFestival()">
+                ×
+            </button>
+
+            <img id="modalImage" src="" alt="">
+
+            <div class="modal-body">
+
+                <p id="modalLocation"></p>
+
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalDescription"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <h3>🇮🇳 Bharat Heritage Explorer</h3>
+
+        <p>
+            Celebrating India's rich heritage and traditions.
+        </p>
+
+    </footer>
+
+
+    <script src="js/festivals.js"></script>
+
+</body>
+
+</html>

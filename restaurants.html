@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Restaurants & Traditional Dining | Bharat Heritage Explorer</title>
+    <meta name="description" content="Discover authentic royal thalis, iconic heritage eateries, street food havens, and Michelin-guide fine dining near India's famous monuments and cultural hubs.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradRest)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradRest)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradRest)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradRest)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradRest)" />
+                    <defs>
+                        <linearGradient id="goldGradRest" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html" class="active nav-rest-pill">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="explore-header">
+        <span class="section-label">AUTHENTIC REGIONAL CUISINE & FINE DINE</span>
+        <h1>Heritage Restaurants of India</h1>
+        <p>
+            Discover authentic royal thalis, iconic century-old eateries, street food legends, and fine dining establishments located near India's famous monuments and cultural destinations.
+        </p>
+    </section>
+
+    <!-- RESTAURANT EXPLORER MAIN SECTION -->
+    <section class="restaurant-main-section">
+        
+        <!-- SEARCH & FILTER TOOLBAR -->
+        <div class="restaurant-toolbar">
+            <div class="search-box">
+                <input type="text" id="restaurantSearch" placeholder="🔍 Search restaurant name, cuisine, city, or landmark (e.g. Bukhara, Karim's, Jaipur, Agra, Amritsar)...">
+            </div>
+
+            <div class="filter-controls">
+                <select id="categoryFilter">
+                    <option value="all">🍛 All Regional Cuisines</option>
+                    <option value="rajasthani">👑 Royal Rajasthani Thali</option>
+                    <option value="north-indian">🍗 North Indian & Mughlai</option>
+                    <option value="south-indian">🍃 South Indian Banana Leaf</option>
+                    <option value="bengali">🐟 Bengali Heritage & Seafood</option>
+                    <option value="coastal">🦀 Coastal & Goan Cuisine</option>
+                </select>
+
+                <select id="priceFilter">
+                    <option value="all">💰 All Price Ranges</option>
+                    <option value="luxury">💎 Luxury Fine Dining (₹3,000+)</option>
+                    <option value="mid">✨ Mid-Range Heritage (₹1,000 - ₹3,000)</option>
+                    <option value="budget">🏷️ Authentic Local Dhaba (Under ₹1,000)</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="rating-desc">⭐ Highest Rated</option>
+                    <option value="reviews-desc">💬 Most Reviewed</option>
+                    <option value="name-asc">🔤 Alphabetical (A-Z)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="results-header-bar">
+            <span id="resultsCount">Showing 9 Heritage Restaurants</span>
+            <span class="helpline-hint">Need Table Recommendations? Call Helpline <strong>+91 99777 17139</strong></span>
+        </div>
+
+        <!-- RESTAURANTS GRID CONTAINER -->
+        <div id="restaurantGridContainer" class="restaurant-grid">
+            <!-- Dynamically populated via js/restaurants.js -->
+        </div>
+
+    </section>
+
+
+    <!-- TABLE RESERVATION MODAL -->
+    <div id="bookingModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <button onclick="closeBookingModal()" class="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <h2>🍽️ Reserve Table at Heritage Restaurant</h2>
+                <p>Book your table in advance for guaranteed seating & authentic dining</p>
+            </div>
+
+            <div id="reservationSuccessAlert" class="form-alert-banner success-banner" style="display: none;"></div>
+
+            <form id="restaurantBookingForm" class="modal-form">
+                <div class="form-group">
+                    <label>Selected Restaurant</label>
+                    <input type="text" id="selectedRestaurantInput" readonly style="background: rgba(255,255,255,0.05); color: #fbbf24; font-weight: 700;">
+                </div>
+
+                <div class="form-grid-modal">
+                    <div class="form-group">
+                        <label for="guestName">Your Full Name *</label>
+                        <input type="text" id="guestName" placeholder="e.g. Ananya Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guestPhone">Contact Phone Number *</label>
+                        <input type="tel" id="guestPhone" placeholder="e.g. +91 99777 17139" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resDate">Dining Date *</label>
+                        <input type="date" id="resDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resGuests">Number of Guests *</label>
+                        <select id="resGuests" required>
+                            <option value="2">2 Guests (Couple / Pair)</option>
+                            <option value="4">4 Guests (Family / Friends)</option>
+                            <option value="6">6 Guests (Group)</option>
+                            <option value="8+">8+ Guests (Large Feast)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialReq">Dietary Requests / Notes</label>
+                    <input type="text" id="specialReq" placeholder="e.g. Pure Veg, Jain Food, Window Seat, High Chair...">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn submit-reserve-btn">
+                        <span>Confirm Table Reservation</span> 🍽️
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <a href="index.html" class="brand-logo-link">
+                        <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="46" stroke="url(#goldGradRestF)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                            <circle cx="50" cy="50" r="28" stroke="url(#goldGradRestF)" stroke-width="1.5" stroke-dasharray="3 3" />
+                            <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradRestF)" stroke-width="1.2" opacity="0.6" />
+                            <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradRestF)" />
+                            <circle cx="50" cy="50" r="6" fill="url(#goldGradRestF)" />
+                            <defs>
+                                <linearGradient id="goldGradRestF" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fbbf24" />
+                                    <stop offset="100%" stop-color="#d97706" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">BHARAT</span>
+                            <span class="brand-tag">HERITAGE EXPLORER</span>
+                        </div>
+                    </a>
+                </div>
+                <p>Celebrating the timeless architectural, living, and culinary heritage of India across 28 states and 8 union territories.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Interactive Map</a>
+                <a href="monuments.html">50 Monuments</a>
+                <a href="festivals.html">Festivals & Fairs</a>
+                <a href="culture.html">Culture & Food</a>
+                <a href="restaurants.html">Heritage Restaurants 🍽️</a>
+                <a href="quiz.html">Heritage Quiz</a>
+                <a href="helpline.html">24/7 Helpline 📞</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Contact & Helpline</h4>
+                <a href="tel:+919977717139">Call Helpline: +91 99777 17139</a>
+                <a href="mailto:help@bharatheritage.org">Email: help@bharatheritage.org</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2026 Bharat Heritage Explorer • Helpline +91 9977717139 • Made with 🇮🇳 for Indian Tourism
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/restaurants.js"></script>
+</body>
+
+</html>

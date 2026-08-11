@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore India | Interactive Heritage Map</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Leaflet CSS for Interactive Map Navigation -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradExp)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradExp)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradExp)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradExp)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradExp)" />
+                    <defs>
+                        <linearGradient id="goldGradExp" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html" class="active">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+
+    </header>
+
+
+    <section class="explore-header">
+
+        <p class="section-label">INTERACTIVE HERITAGE MAP</p>
+
+        <h1>Explore India's Heritage & Regions</h1>
+
+        <p>
+            Navigate through India's iconic monuments, ancient temples, UNESCO sites, and vibrant cultural traditions on our interactive map.
+        </p>
+
+    </section>
+
+    <!-- MAP NAVIGATION SYSTEM SECTION -->
+    <section class="map-navigation-section">
+        <div class="map-toolbar">
+            <!-- Region Navigation Filters -->
+            <div class="map-region-filters">
+                <button class="map-filter-btn active" data-region="all">📍 All 28 States & UTs</button>
+                <button class="map-filter-btn" data-region="north">🏔️ North India</button>
+                <button class="map-filter-btn" data-region="south">🌊 South India</button>
+                <button class="map-filter-btn" data-region="west">🏜️ West India</button>
+                <button class="map-filter-btn" data-region="east">🌅 East & North-East</button>
+                <button class="map-filter-btn" data-region="central">🏛️ Central India</button>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="map-category-filters">
+                <span class="category-pill active" data-category="all">All Sites</span>
+                <span class="category-pill" data-category="monument">🏛️ Monuments & Forts</span>
+                <span class="category-pill" data-category="temple">🛕 Ancient Temples</span>
+                <span class="category-pill" data-category="unesco">🌟 UNESCO World Heritage</span>
+                <span class="category-pill" data-category="culture">🎭 Cultural Traditions</span>
+            </div>
+        </div>
+
+        <!-- Map & Info Panel Container -->
+        <div class="map-main-wrapper">
+            <!-- Interactive Map Container -->
+            <div class="map-container-box">
+                <div id="indiaMap"></div>
+                <!-- Map Overlay Legend / Info -->
+                <div class="map-legend">
+                    <div class="legend-item"><span class="legend-dot monument"></span> Monument</div>
+                    <div class="legend-item"><span class="legend-dot temple"></span> Temple</div>
+                    <div class="legend-item"><span class="legend-dot unesco"></span> UNESCO</div>
+                    <div class="legend-item"><span class="legend-dot culture"></span> Culture</div>
+                </div>
+            </div>
+
+            <!-- Side Information Panel for Selected Heritage Location -->
+            <div class="map-info-panel" id="mapInfoPanel">
+                <div class="panel-placeholder" id="panelPlaceholder">
+                    <div class="placeholder-icon">🗺️</div>
+                    <h3>Interactive Map Navigation</h3>
+                    <p>Click on any marker on the map or select a region button to inspect heritage sites, GPS coordinates, historical facts, and regional traditions.</p>
+                    <div class="panel-quick-stats">
+                        <div class="stat-badge"><span>36</span> Sites</div>
+                        <div class="stat-badge"><span>36</span> States & UTs</div>
+                        <div class="stat-badge"><span>100%</span> Coverage</div>
+                    </div>
+                </div>
+
+                <div class="panel-card-content hidden" id="panelCardContent">
+                    <img id="panelImage" src="" alt="Heritage Place">
+                    <div class="panel-card-body">
+                        <div class="panel-badge-group">
+                            <span class="panel-category-badge" id="panelCategory">Monument</span>
+                            <span class="panel-region-badge" id="panelRegion">North India</span>
+                        </div>
+                        <h2 id="panelTitle">Taj Mahal</h2>
+                        <p class="panel-location" id="panelLocation">📍 Agra, Uttar Pradesh</p>
+                        <p class="panel-desc" id="panelDesc">Description text goes here...</p>
+                        <div class="panel-fact-box">
+                            <strong>✦ Historical Highlight:</strong>
+                            <p id="panelFact">UNESCO World Heritage site built in white marble.</p>
+                        </div>
+                        <button class="panel-action-btn" id="panelActionBtn">View State Card ↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REGIONAL CARDS GRID SECTION -->
+    <section class="explore-section">
+
+        <div class="search-box">
+
+            <input type="text" id="searchInput" placeholder="Search a state, city, or heritage site...">
+
+        </div>
+
+
+        <div class="filter-buttons">
+
+            <button class="state-filter-btn active" onclick="filterStates('all')">
+                All States & UTs
+            </button>
+
+            <button class="state-filter-btn" onclick="filterStates('north')">
+                North India
+            </button>
+
+            <button class="state-filter-btn" onclick="filterStates('south')">
+                South India
+            </button>
+
+            <button class="state-filter-btn" onclick="filterStates('west')">
+                West India
+            </button>
+
+            <button class="state-filter-btn" onclick="filterStates('east')">
+                East & North-East
+            </button>
+
+            <button class="state-filter-btn" onclick="filterStates('central')">
+                Central India
+            </button>
+
+        </div>
+
+
+        <div id="stateContainer" class="state-grid"></div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>🇮🇳 Bharat Heritage Explorer</h3>
+
+        <p>
+            Celebrating India's rich heritage and traditions.
+        </p>
+
+    </footer>
+
+
+    <!-- Leaflet JS Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/explore.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Heritage Explorer | Discover India's Timeless Wonders</title>
+    <meta name="description" content="Explore India's rich cultural heritage, interactive 3D map, 50+ ancient monuments, living festivals, classical arts, and heritage quizzes.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradient)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradient)" />
+                    <path d="M50 32 C44 40 38 46 50 72 C62 46 56 40 50 32 Z" fill="#0f172a" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradient)" />
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="50%" stop-color="#f59e0b" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Video & Visual Slider Section -->
+    <section class="hero-slider-container">
+        <!-- Video & Image Background Slides -->
+        <div class="slider-wrapper">
+            <!-- Slide 1: Taj Mahal -->
+            <div class="slide active" data-index="0">
+                <video class="slide-video" autoplay muted loop playsinline poster="taj.jpg">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-taj-mahal-in-india-40660-large.mp4" type="video/mp4">
+                    <source src="https://cdn.coverr.co/videos/coverr-taj-mahal-at-sunrise-5511/1080p.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">🏛️ AGRA, UTTAR PRADESH • UNESCO WONDER</span>
+                    <h1>
+                        The Timeless<br>
+                        <span>Taj Mahal</span>
+                    </h1>
+                    <p>
+                        Discover India's iconic symbol of eternal love, built with exquisite white Makrana marble craftsmanship and imperial Mughal symmetry.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="monuments.html" class="btn primary">Explore Monuments →</a>
+                        <a href="explore.html" class="btn secondary">Interactive Map</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Amer Fort -->
+            <div class="slide" data-index="1">
+                <video class="slide-video" autoplay muted loop playsinline poster="amer-fort.png">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-ancient-fortress-in-india-42861-large.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">🏰 JAIPUR, RAJASTHAN • ROYAL RAJPUT VALOR</span>
+                    <h1>
+                        Majestic<br>
+                        <span>Amer Fort</span>
+                    </h1>
+                    <p>
+                        Immerse yourself in Rajput grandeur, mirror palaces (Sheesh Mahal), and hilltop fortresses overlooking Maota Lake.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="explore.html" class="btn primary">Explore Rajasthan →</a>
+                        <a href="culture.html" class="btn secondary">Discover Culture</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Hampi -->
+            <div class="slide" data-index="2">
+                <video class="slide-video" autoplay muted loop playsinline poster="hampi.jpg">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-ancient-temple-ruins-41223-large.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">🛕 HAMPI, KARNATAKA • VIJAYANAGARA EMPIRE</span>
+                    <h1>
+                        Sacred Ruins of<br>
+                        <span>Hampi Chariot</span>
+                    </h1>
+                    <p>
+                        Step back into the legendary boulder-strewn stone architecture of southern empire heritage and musical pillars.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="monuments.html" class="btn primary">Discover Hampi →</a>
+                        <a href="explore.html" class="btn secondary">Explore All 36 States</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Konark Sun Temple -->
+            <div class="slide" data-index="3">
+                <video class="slide-video" autoplay muted loop playsinline poster="konark.jpg">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-temple-architecture-details-42864-large.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">🌞 PURI, ODISHA • 13TH CENTURY CHARIOT TEMPLE</span>
+                    <h1>
+                        Architectural Marvel<br>
+                        <span>Konark Sun Temple</span>
+                    </h1>
+                    <p>
+                        Marvel at the massive stone chariot with 24 intricately carved wheels acting as precise sundials dedicated to Sun God Surya.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="monuments.html" class="btn primary">Explore Monuments →</a>
+                        <a href="quiz.html" class="btn secondary">Take Heritage Quiz</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Red Fort -->
+            <div class="slide" data-index="4">
+                <video class="slide-video" autoplay muted loop playsinline poster="red-fort.jpg">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-indian-flag-waving-in-the-wind-41586-large.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">🇮🇳 NEW DELHI • SYMBOL OF INDIA'S FREEDOM</span>
+                    <h1>
+                        Historic Citadel<br>
+                        <span>Red Fort Delhi</span>
+                    </h1>
+                    <p>
+                        Witness the red sandstone citadel that echoes centuries of royal Mughal history, independence speeches, and national pride.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="explore.html" class="btn primary">Explore India →</a>
+                        <a href="festivals.html" class="btn secondary">Experience Festivals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Line Bar -->
+        <div class="slider-progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </section>
+
+
+    <!-- Quick Stats Bar -->
+<section class="stats-slide">
+
+    <div class="stats-heading">
+        <span>BHARAT HERITAGE EXPLORER</span>
+        <h2>Bharat at a Glance</h2>
+        <p>A Living Legacy of History, Culture & Heritage</p>
+    </div>
+
+    <div class="stats-grid">
+
+        <div class="stat-item">
+            <h3>28</h3>
+            <p>Indian States Covered</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>8</h3>
+            <p>Union Territories</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Monuments & Forts</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>20+</h3>
+            <p>State Festivals</p>
+        </div>
+
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Interactive Exploration</p>
+        </div>
+
+    </div>
+
+    <div class="stats-bottom-line">
+        <span></span>
+        <p>DISCOVER • EXPERIENCE • PRESERVE</p>
+        <span></span>
+    </div>
+
+</section>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <span class="section-label">INDIA • A LAND OF ETERNAL DIVERSITY</span>
+        <h2>
+            One Golden Nation.<br>
+            <span>Thousands of Living Stories.</span>
+        </h2>
+        <p class="intro-text">
+            From majestic stone fortresses perched above desert horizons to vibrant harvest dance traditions, 
+            Bharat Heritage Explorer brings India's 5,000-year living legacy directly to your fingertips.
+        </p>
+    </section>
+
+
+    <!-- Feature Discovery Modules -->
+    <section class="home-features-section">
+        <div class="features-header">
+
+    <span class="section-label">
+        CHOOSE YOUR JOURNEY
+    </span>
+
+    <h2>
+        Explore Our
+        <span>Heritage Pillars</span>
+    </h2>
+
+    <p>
+        One gateway to India's monuments, traditions,
+        cuisine and living culture.
+    </p>
+
+</div>
+
+        <div class="categories">
+            <!-- 1. Explore Map -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="scenery_bg.png" alt="Interactive Map" onerror="this.onerror=null; this.src='taj.jpg';">
+                    <span class="card-badge">🗺️ INTERACTIVE MAP</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>36 States & UTs Map</h3>
+                    <p>Navigate our interactive map pins spanning every state and union territory in India.</p>
+                    <a href="explore.html" class="card-link-btn">Launch Map Explorer →</a>
+                </div>
+            </div>
+
+            <!-- 2. Monuments -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="red-fort.jpg" alt="Monuments of India" onerror="this.onerror=null; this.src='scenery_bg.png';">
+                    <span class="card-badge">🏛️ ARCHITECTURE</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>50 Iconic Monuments</h3>
+                    <p>Explore 50 iconic forts, stepwells, UNESCO world heritage sites, and ancient temples.</p>
+                    <a href="monuments.html" class="card-link-btn">Explore 50 Monuments →</a>
+                </div>
+            </div>
+
+            <!-- 3. Festivals -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="durga-puja.jpg" alt="Festivals & Traditions" onerror="this.onerror=null; this.src='scenery_bg.png';">
+                    <span class="card-badge">🎭 LIVING TRADITIONS</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>Festivals & Fairs</h3>
+                    <p>Experience grand celebrations including Navratri, Bihu, Hornbill, Chhath Puja, and Puri Ratha Yatra.</p>
+                    <a href="festivals.html" class="card-link-btn">Discover Festivals →</a>
+                </div>
+            </div>
+
+            <!-- 4. Culture -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="bharatanatyam.jpg" alt="Culture & Arts" onerror="this.onerror=null; this.src='scenery_bg.png';">
+                    <span class="card-badge">🍛 CULINARY & ARTS</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>Culture & Living Arts</h3>
+                    <p>Delve into regional culinary feasts, folk paintings, classical dance forms, and heritage silks.</p>
+                    <a href="culture.html" class="card-link-btn">Explore Culture →</a>
+                </div>
+            </div>
+
+            <!-- 5. Hotels -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="rajasthan.jpg" alt="Hotels & Stays" onerror="this.onerror=null; this.src='scenery_bg.png';">
+                    <span class="card-badge">🏨 HERITAGE STAYS</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>Hotels & Resorts 🏨</h3>
+                    <p>Locate royal palace hotels, luxury resorts, and cozy boutique stays near major tourist landmarks.</p>
+                    <a href="hotels.html" class="card-link-btn">Find Hotels & Stays →</a>
+                </div>
+            </div>
+
+            <!-- 6. Restaurants -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="dal-baati.jpg" alt="Heritage Restaurants" onerror="this.onerror=null; this.src='scenery_bg.png';">
+                    <span class="card-badge">🍽️ TRADITIONAL DINING</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>Heritage Restaurants 🍽️</h3>
+                    <p>Discover authentic royal thalis, century-old eateries, and regional fine dining near monuments.</p>
+                    <a href="restaurants.html" class="card-link-btn">Explore Restaurants →</a>
+                </div>
+            </div>
+
+            <!-- 7. Reviews -->
+            <div class="category-card">
+                <div class="card-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" alt="Tourist Reviews" onerror="this.onerror=null; this.src='taj.jpg';">
+                    <span class="card-badge">📸 MEDIA & REVIEWS</span>
+                </div>
+                <div class="category-card-body">
+                    <h3>Tourist Media & Reviews 📸</h3>
+                    <p>Upload photos, videos, and share your authentic travel stories of Indian heritage places.</p>
+                    <a href="reviews.html" class="card-link-btn">Post Review & Photos →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+<!-- =========================================
+     FULL SCREEN HERITAGE CHALLENGE
+========================================= -->
+
+<section class="heritage-quiz-section">
+
+    <!-- Background -->
+    <div class="quiz-bg"></div>
+
+    <!-- Dark + Golden Overlay -->
+    <div class="quiz-overlay"></div>
+
+    <!-- Decorative Elements -->
+    <div class="quiz-orb quiz-orb-one"></div>
+    <div class="quiz-orb quiz-orb-two"></div>
+
+    <div class="quiz-content">
+
+        <!-- LEFT CONTENT -->
+        <div class="quiz-copy">
+
+            <div class="quiz-badge">
+                🏆
+                INTERACTIVE HERITAGE CHALLENGE
+            </div>
+
+            <span class="quiz-eyebrow">
+                TEST YOUR KNOWLEDGE
+            </span>
+
+            <h2>
+                How Well Do You
+                <br>
+                <span>Know Bharat?</span>
+            </h2>
+
+            <p>
+                Journey through India's monuments, dynasties,
+                festivals, traditions and culture.
+                Challenge yourself and discover how much
+                you really know about India's timeless heritage.
+            </p>
+
+            <div class="quiz-actions">
+
+                <a href="quiz.html" class="quiz-primary-btn">
+                    Start Heritage Quiz
+                    <span>→</span>
+                </a>
+
+                <div class="quiz-info">
+                    <span>🏛️</span>
+                    <div>
+                        <strong>50+ Questions</strong>
+                        <small>History • Culture • Heritage</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT VISUAL -->
+        <div class="quiz-visual">
+
+            <div class="quiz-image-card">
+
+                <img
+                    src="quiz.png"
+                    alt="Indian Heritage Monument">
+
+                <div class="quiz-image-overlay"></div>
+
+               
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM LINE -->
+    <div class="quiz-bottom">
+
+        <span></span>
+
+        <p>
+            DISCOVER • LEARN • CHALLENGE • PRESERVE
+        </p>
+
+        <span></span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FULL SCREEN TOURIST HELPLINE
+========================================= -->
+
+<section class="helpline-fullscreen">
+
+    <!-- Background -->
+    <div class="helpline-bg"></div>
+
+    <!-- Dark overlay -->
+    <div class="helpline-overlay"></div>
+
+    <div class="helpline-content">
+
+        <!-- Badge -->
+        <div class="helpline-badge">
+            <span>📞</span>
+            24/7 HELPLINE
+        </div>
+
+        <!-- Heading -->
+        <h2>
+            Tourist Support
+            <br>
+            <span>Helpline 📞</span>
+        </h2>
+
+        <!-- Description -->
+        <p class="helpline-description">
+            We're here for you, anytime, anywhere.
+            <br>
+            Get 24×7 assistance for travel guidance,
+            <br>
+            information and emergency support.
+        </p>
+
+        <!-- Contact Cards -->
+        <div class="helpline-contacts">
+
+            <a href="tel:+919977717139" class="helpline-contact">
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+                    <small>CALL US</small>
+                    <strong>+91 99777 17139</strong>
+                </div>
+            </a>
+
+
+            <a href="mailto:help@bharatheritage.org" class="helpline-contact">
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+                    <small>EMAIL US</small>
+                    <strong>help@bharatheritage.org</strong>
+                </div>
+            </a>
+
+        </div>
+
+
+        <!-- Features -->
+        <div class="helpline-features">
+
+            <div>
+                <span>🛡️</span>
+                <p>Trusted Support</p>
+            </div>
+
+            <div>
+                <span>◷</span>
+                <p>24/7 Available</p>
+            </div>
+
+            <div>
+                <span>🎧</span>
+                <p>Quick Response</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Decorative bottom glow -->
+    <div class="helpline-glow"></div>
+
+</section>
+
+
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+        <div class="quote-container">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+                India is the cradle of the human race, the birthplace of human speech, 
+                the mother of history, the grandmother of legend, and the great grandmother of tradition. 
+                Our most valuable and most instructive materials in the history of man are treasured up in India only.
+            </p>
+            <p class="quote-author">— Mark Twain, American Author & Philosopher</p>
+        </div>
+    </section>
+
+
+    <!-- Newsletter & Explorer Pass -->
+    <section class="passport-section">
+        <div class="passport-card">
+            <h2>Join the Heritage Explorer Club</h2>
+            <p>Get weekly curated stories about hidden Indian monuments, folk festivals, and cultural traditions.</p>
+            <form class="passport-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Bharat Heritage Explorer!');">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit" class="btn primary">Subscribe Free →</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <a href="index.html" class="brand-logo-link">
+                        <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="46" stroke="url(#goldGradFooter)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                            <circle cx="50" cy="50" r="28" stroke="url(#goldGradFooter)" stroke-width="1.5" stroke-dasharray="3 3" />
+                            <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradFooter)" stroke-width="1.2" opacity="0.6" />
+                            <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradFooter)" />
+                            <circle cx="50" cy="50" r="6" fill="url(#goldGradFooter)" />
+                            <defs>
+                                <linearGradient id="goldGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fbbf24" />
+                                    <stop offset="100%" stop-color="#d97706" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">BHARAT</span>
+                            <span class="brand-tag">HERITAGE EXPLORER</span>
+                        </div>
+                    </a>
+                </div>
+                <p>Celebrating the timeless architectural, living, and cultural legacy of India across 28 states and 8 union territories.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Interactive Map</a>
+                <a href="monuments.html">50 Monuments</a>
+                <a href="festivals.html">Festivals & Fairs</a>
+                <a href="culture.html">Culture & Food</a>
+                <a href="quiz.html">Heritage Quiz</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Top Regions</h4>
+                <a href="explore.html?region=north">North India</a>
+                <a href="explore.html?region=south">South India</a>
+                <a href="explore.html?region=west">West India</a>
+                <a href="explore.html?region=east">East & NE India</a>
+                <a href="explore.html?region=central">Central India</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2026 Bharat Heritage Explorer • Made with 🇮🇳 for Indian Heritage
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

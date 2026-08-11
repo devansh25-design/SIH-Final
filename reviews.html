@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Reviews & Media Gallery | Bharat Heritage Explorer</title>
+    <meta name="description" content="Share your travel stories, upload photos and videos of Indian heritage places, rate monuments, and read authentic traveler reviews.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradRev)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradRev)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradRev)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradRev)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradRev)" />
+                    <defs>
+                        <linearGradient id="goldGradRev" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html" class="active">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+    </header>
+
+
+    <!-- PAGE HEADER -->
+    <section class="explore-header">
+        <span class="section-label">TOURIST STORIES & MEDIA GALLERY</span>
+        <h1>Share Your Heritage Experiences</h1>
+        <p>
+            Upload photos, videos, and authentic reviews of tourism destinations, ancient monuments, and cultural festivals across India.
+        </p>
+    </section>
+
+
+    <!-- REVIEWS & UPLOAD SECTION -->
+    <section class="reviews-main-section">
+        <div class="reviews-layout">
+            
+            <!-- LEFT COLUMN: UPLOAD & REVIEW FORM -->
+            <div class="review-form-card">
+                <div class="form-header">
+                    <h2>📸 Submit Your Review & Media</h2>
+                    <p>Help fellow travelers discover the beauty of Indian heritage!</p>
+                </div>
+
+                <form id="reviewUploadForm" onsubmit="handleReviewSubmit(event)">
+                    <!-- TOURIST NAME & LOCATION -->
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="touristName">Your Name *</label>
+                            <input type="text" id="touristName" placeholder="e.g. Priya Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="touristCity">Your City / Country</label>
+                            <input type="text" id="touristCity" placeholder="e.g. New Delhi, India">
+                        </div>
+                    </div>
+
+                    <!-- TOURISM PLACE SELECTION -->
+                    <div class="form-group">
+                        <label for="placeSelect">Select Tourism Place / Heritage Site *</label>
+                        <select id="placeSelect" required>
+                            <option value="">-- Choose a Destination --</option>
+                            <option value="Taj Mahal, Agra">🏛️ Taj Mahal, Agra (Uttar Pradesh)</option>
+                            <option value="Amer Fort, Jaipur">🏰 Amer Fort, Jaipur (Rajasthan)</option>
+                            <option value="Hampi Chariot Ruins">🛕 Hampi Chariot Ruins (Karnataka)</option>
+                            <option value="Konark Sun Temple">🌞 Konark Sun Temple (Odisha)</option>
+                            <option value="Red Fort, Delhi">🇮🇳 Red Fort (New Delhi)</option>
+                            <option value="Qutub Minar, Delhi">🗼 Qutub Minar (New Delhi)</option>
+                            <option value="Golden Temple, Amritsar">🪔 Golden Temple (Punjab)</option>
+                            <option value="Meenakshi Temple, Madurai">🌺 Meenakshi Temple (Tamil Nadu)</option>
+                            <option value="Ajanta & Ellora Caves">🗿 Ajanta & Ellora Caves (Maharashtra)</option>
+                            <option value="Kerala Backwaters">🛶 Kerala Backwaters (Kerala)</option>
+                            <option value="Khajuraho Temples">🎨 Khajuraho Temples (Madhya Pradesh)</option>
+                            <option value="Varanasi Ghats">🔱 Varanasi Ghats (Uttar Pradesh)</option>
+                            <option value="Gateway of India, Mumbai">🌊 Gateway of India (Mumbai)</option>
+                            <option value="Other Destination">✨ Other Destination / Cultural Event</option>
+                        </select>
+                    </div>
+
+                    <!-- RATING PICKER -->
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <div class="star-rating-picker" id="starPicker">
+                            <span class="star-pick" data-val="1" onclick="setRating(1)">★</span>
+                            <span class="star-pick" data-val="2" onclick="setRating(2)">★</span>
+                            <span class="star-pick" data-val="3" onclick="setRating(3)">★</span>
+                            <span class="star-pick" data-val="4" onclick="setRating(4)">★</span>
+                            <span class="star-pick" data-val="5" onclick="setRating(5)">★</span>
+                            <span id="ratingValText" class="rating-val-text">5.0 / 5.0 (Excellent)</span>
+                        </div>
+                        <input type="hidden" id="selectedRating" value="5">
+                    </div>
+
+                    <!-- REVIEW STORY TEXT -->
+                    <div class="form-group">
+                        <label for="reviewText">Write Your Review & Travel Tips *</label>
+                        <textarea id="reviewText" rows="4" placeholder="Describe your experience, best time to visit, guides, hidden spots..." required></textarea>
+                    </div>
+
+                    <!-- FILE UPLOAD INPUTS -->
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="photoFile">📷 Upload Photo (JPG, PNG)</label>
+                            <input type="file" id="photoFile" accept="image/*" onchange="previewMedia('photo')">
+                        </div>
+                        <div class="form-group">
+                            <label for="videoFile">🎥 Upload Video (MP4, WEBM)</label>
+                            <input type="file" id="videoFile" accept="video/*" onchange="previewMedia('video')">
+                        </div>
+                    </div>
+
+                    <!-- MEDIA PREVIEW CONTAINER -->
+                    <div id="mediaPreviewBox" class="media-preview-box" style="display: none;">
+                        <h4>Selected Media Preview:</h4>
+                        <div id="previewWrap" class="preview-wrap"></div>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="btn primary submit-review-btn">Post Review & Media →</button>
+                </form>
+            </div>
+
+
+            <!-- RIGHT COLUMN: COMMUNITY REVIEWS FEED -->
+            <div class="reviews-feed-wrapper">
+                <div class="feed-header">
+                    <h2>💬 Recent Traveler Reviews</h2>
+                    <div class="feed-filters">
+                        <button class="feed-filter-btn active" data-filter="all" onclick="filterFeed('all', this)">All Reviews</button>
+                        <button class="feed-filter-btn" data-filter="photo" onclick="filterFeed('photo', this)">📷 Photos</button>
+                        <button class="feed-filter-btn" data-filter="video" onclick="filterFeed('video', this)">🎥 Videos</button>
+                        <button class="feed-filter-btn" data-filter="top" onclick="filterFeed('top', this)">⭐ Top Rated</button>
+                    </div>
+                </div>
+
+                <div id="reviewsContainer" class="reviews-feed">
+                    <!-- Dynamically populated by js/reviews.js -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MEDIA LIGHTBOX MODAL -->
+    <div id="mediaLightboxModal" class="modal">
+        <div class="modal-content media-lightbox-content">
+            <button class="close-btn" onclick="closeMediaLightbox()">×</button>
+            <div id="lightboxMediaHolder" class="lightbox-media-holder"></div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <a href="index.html" class="brand-logo-link">
+                        <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="46" stroke="url(#goldGradRevFoot)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                            <circle cx="50" cy="50" r="28" stroke="url(#goldGradRevFoot)" stroke-width="1.5" stroke-dasharray="3 3" />
+                            <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradRevFoot)" stroke-width="1.2" opacity="0.6" />
+                            <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradRevFoot)" />
+                            <circle cx="50" cy="50" r="6" fill="url(#goldGradRevFoot)" />
+                            <defs>
+                                <linearGradient id="goldGradRevFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fbbf24" />
+                                    <stop offset="100%" stop-color="#d97706" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">BHARAT</span>
+                            <span class="brand-tag">HERITAGE EXPLORER</span>
+                        </div>
+                    </a>
+                </div>
+                <p>Authentic reviews, traveler media uploads, and community heritage stories from tourists exploring India.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Interactive Map</a>
+                <a href="monuments.html">50 Monuments</a>
+                <a href="festivals.html">Festivals & Fairs</a>
+                <a href="culture.html">Culture & Food</a>
+                <a href="hotels.html">Hotels & Stays</a>
+                <a href="reviews.html">Tourist Reviews</a>
+                <a href="quiz.html">Heritage Quiz</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Popular Reviews</h4>
+                <a href="reviews.html">Taj Mahal Photo Reviews</a>
+                <a href="reviews.html">Amer Fort Video Guides</a>
+                <a href="reviews.html">Hampi Traveler Stories</a>
+                <a href="reviews.html">Kerala Backwater Reviews</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2026 Bharat Heritage Explorer • Made with 🇮🇳 for Indian Tourism Community
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/reviews.js"></script>
+</body>
+
+</html>

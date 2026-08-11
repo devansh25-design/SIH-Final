@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels & Heritage Stays | Bharat Heritage Explorer</title>
+    <meta name="description" content="Locate top hotels, royal palace stays, luxury resorts, and budget hotels near every major tourist destination in India.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradHotels)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradHotels)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradHotels)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradHotels)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradHotels)" />
+                    <defs>
+                        <linearGradient id="goldGradHotels" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html" class="active">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+    </header>
+
+
+    <!-- PAGE HEADER -->
+    <section class="explore-header">
+        <span class="section-label">HERITAGE STAYS & RESORTS</span>
+        <h1>Hotels Near Tourist Destinations</h1>
+        <p>
+            Find royal palace hotels, luxury resorts, and cozy boutique stays located near India's famous heritage sites.
+        </p>
+    </section>
+
+
+    <!-- HOTEL EXPLORER SECTION -->
+    <section class="hotel-section">
+        <!-- SEARCH & SORT BAR -->
+        <div class="hotel-toolbar">
+            <div class="search-box">
+                <input type="text" id="hotelSearch" placeholder="🔍 Search hotel name, city, state, or landmark (e.g. Taj Mahal, Jaipur, Kerala)...">
+            </div>
+
+            <div class="sort-box">
+                <label for="sortSelect">Sort By:</label>
+                <select id="sortSelect" onchange="applyHotelFilters()">
+                    <option value="recommended">Featured & Recommended</option>
+                    <option value="rating">Top Rated ⭐⭐⭐⭐⭐</option>
+                    <option value="price-low">Price: Low to High 🏷️</option>
+                    <option value="price-high">Price: High to Low 💎</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- CATEGORY PILL FILTERS -->
+        <div class="hotel-category-pills">
+            <button class="category-pill active" data-type="all" onclick="filterType('all', this)">All Stays</button>
+            <button class="category-pill" data-type="palace" onclick="filterType('palace', this)">👑 Palace & Heritage</button>
+            <button class="category-pill" data-type="luxury" onclick="filterType('luxury', this)">🌟 Luxury Resorts</button>
+            <button class="category-pill" data-type="boutique" onclick="filterType('boutique', this)">🏡 Boutique Stays</button>
+            <button class="category-pill" data-type="budget" onclick="filterType('budget', this)">🌿 Eco & Budget</button>
+        </div>
+
+        <!-- REGION FILTER BUTTONS -->
+        <div class="filter-buttons">
+            <button class="hotel-region-btn active" data-region="all" onclick="filterRegion('all', this)">All India</button>
+            <button class="hotel-region-btn" data-region="north" onclick="filterRegion('north', this)">North India</button>
+            <button class="hotel-region-btn" data-region="south" onclick="filterRegion('south', this)">South India</button>
+            <button class="hotel-region-btn" data-region="west" onclick="filterRegion('west', this)">West India</button>
+            <button class="hotel-region-btn" data-region="east" onclick="filterRegion('east', this)">East & NE India</button>
+            <button class="hotel-region-btn" data-region="central" onclick="filterRegion('central', this)">Central India</button>
+        </div>
+
+        <!-- HOTEL GRID CONTAINER -->
+        <div id="hotelContainer" class="hotel-grid">
+            <!-- Dynamically populated by js/hotels.js -->
+        </div>
+    </section>
+
+
+    <!-- HOTEL DETAILS & BOOKING MODAL -->
+    <div id="hotelModal" class="modal">
+        <div class="modal-content hotel-modal-content">
+            <button class="close-btn" onclick="closeHotelModal()">×</button>
+            <div class="hotel-modal-grid">
+                <div class="hotel-modal-image-wrap">
+                    <img id="modalHotelImage" src="" alt="Hotel Preview">
+                    <span id="modalHotelBadge" class="modal-badge"></span>
+                </div>
+                <div class="hotel-modal-info">
+                    <h2 id="modalHotelTitle"></h2>
+                    <div id="modalHotelLocation" class="modal-location"></div>
+                    <div id="modalHotelLandmark" class="modal-landmark"></div>
+                    <div class="modal-rating-price">
+                        <span id="modalHotelRating" class="rating-badge"></span>
+                        <span id="modalHotelPrice" class="price-tag"></span>
+                    </div>
+                    <p id="modalHotelDesc" class="modal-desc"></p>
+
+                    <div class="modal-amenities-section">
+                        <h4>Popular Amenities</h4>
+                        <div id="modalHotelAmenities" class="amenities-tags"></div>
+                    </div>
+
+                    <div class="modal-booking-box">
+                        <button class="btn primary book-btn" onclick="simulateBooking()">Book Room Now →</button>
+                        <span class="booking-note">⚡ Free Cancellation • Pay at Hotel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <a href="index.html" class="brand-logo-link">
+                        <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="46" stroke="url(#goldGradHotelsFoot)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                            <circle cx="50" cy="50" r="28" stroke="url(#goldGradHotelsFoot)" stroke-width="1.5" stroke-dasharray="3 3" />
+                            <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradHotelsFoot)" stroke-width="1.2" opacity="0.6" />
+                            <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradHotelsFoot)" />
+                            <circle cx="50" cy="50" r="6" fill="url(#goldGradHotelsFoot)" />
+                            <defs>
+                                <linearGradient id="goldGradHotelsFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fbbf24" />
+                                    <stop offset="100%" stop-color="#d97706" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="brand-text">
+                            <span class="brand-name">BHARAT</span>
+                            <span class="brand-tag">HERITAGE EXPLORER</span>
+                        </div>
+                    </a>
+                </div>
+                <p>Curated heritage stays, palace hotels, and luxury resorts situated right next to India's most iconic tourist destinations.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Interactive Map</a>
+                <a href="monuments.html">50 Monuments</a>
+                <a href="festivals.html">Festivals & Fairs</a>
+                <a href="culture.html">Culture & Food</a>
+                <a href="hotels.html">Hotels & Stays</a>
+                <a href="quiz.html">Heritage Quiz</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Top Destinations</h4>
+                <a href="hotels.html">Agra Taj Hotels</a>
+                <a href="hotels.html">Jaipur Palace Hotels</a>
+                <a href="hotels.html">Kerala Backwater Resorts</a>
+                <a href="hotels.html">Hampi Heritage Stays</a>
+                <a href="hotels.html">Goa Beach Resorts</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2026 Bharat Heritage Explorer • Made with 🇮🇳 for Indian Tourism
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/hotels.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monuments | Bharat Heritage</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html" class="brand-logo-link">
+                <svg class="brand-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" stroke="url(#goldGradMon)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                    <circle cx="50" cy="50" r="28" stroke="url(#goldGradMon)" stroke-width="1.5" stroke-dasharray="3 3" />
+                    <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradMon)" stroke-width="1.2" opacity="0.6" />
+                    <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradMon)" />
+                    <circle cx="50" cy="50" r="6" fill="url(#goldGradMon)" />
+                    <defs>
+                        <linearGradient id="goldGradMon" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-name">BHARAT</span>
+                    <span class="brand-tag">HERITAGE EXPLORER</span>
+                </div>
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore Map</a>
+            <a href="monuments.html" class="active">Monuments</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="culture.html">Culture</a>
+            <a href="hotels.html">Hotels 🏨</a>
+            <a href="restaurants.html">Restaurants 🍽️</a>
+            <a href="reviews.html">Reviews 📸</a>
+            <a href="quiz.html" class="nav-quiz-pill">Quiz 🏆</a>
+            <a href="helpline.html" class="nav-helpline-pill">Helpline 📞</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="explore-header">
+
+        <p class="section-label">
+            ARCHITECTURAL HERITAGE
+        </p>
+
+        <h1>Monuments of India</h1>
+
+        <p>
+            Explore India's iconic monuments and discover
+            the stories behind their architecture and history.
+        </p>
+
+    </section>
+
+
+    <!-- MONUMENT SECTION -->
+
+    <section class="monument-section">
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input type="text" id="monumentSearch" placeholder="Search monuments...">
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filter-buttons">
+
+            <button onclick="filterMonuments('all')">
+                All Monuments
+            </button>
+
+            <button onclick="filterMonuments('north')">
+                North India
+            </button>
+
+            <button onclick="filterMonuments('south')">
+                South India
+            </button>
+
+            <button onclick="filterMonuments('west')">
+                West India
+            </button>
+
+            <button onclick="filterMonuments('east')">
+                East India
+            </button>
+
+            <button onclick="filterMonuments('central')">
+                Central India
+            </button>
+
+        </div>
+
+
+        <!-- CARDS -->
+
+        <div id="monumentContainer" class="monument-grid">
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>🇮🇳 Bharat Heritage Explorer</h3>
+
+        <p>
+            Celebrating India's rich heritage and traditions.
+        </p>
+
+    </footer>
+
+
+    <script src="js/monuments.js"></script>
+
+</body>
+
+</html>
