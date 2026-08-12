@@ -6255,6 +6255,55 @@ body {
 
 
 /* =========================================
+   EXPLORE OVERLAY BUTTON ON SLIDE IMAGE
+========================================= */
+
+.home-features-section .card-explore-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-features-section .category-card:hover .card-explore-overlay {
+    opacity: 1;
+}
+
+.home-features-section .explore-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+    transform: translateY(12px) scale(0.95);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.home-features-section .category-card:hover .explore-pill-btn {
+    transform: translateY(0) scale(1);
+}
+
+.home-features-section .explore-pill-btn:hover {
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.85);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* =========================================
    GLASS BADGE
 ========================================= */
 
@@ -6395,40 +6444,36 @@ body {
 
 
 /* =========================================
-   LINK
+   LINK BUTTON
 ========================================= */
 
 .home-features-section .card-link-btn {
-
     margin-top: auto;
-
-    padding-top: 10px;
-
-    display: flex;
-
+    padding: 8px 14px;
+    display: inline-flex;
     align-items: center;
-
+    justify-content: center;
     gap: 7px;
-
-    color: #f59e0b;
-
+    width: fit-content;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.25));
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-radius: 20px;
+    color: #fef08a;
     font-size: 11px;
-
-    font-weight: 800;
-
+    font-weight: 700;
+    letter-spacing: 0.3px;
     text-decoration: none;
-
-    transition:
-        gap .3s ease,
-        color .3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
 }
 
-
 .home-features-section .card-link-btn:hover {
-
-    gap: 12px;
-
-    color: #fbbf24;
+    gap: 10px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #0f172a;
+    border-color: #fbbf24;
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.5);
+    transform: translateY(-2px);
 }
 
 
