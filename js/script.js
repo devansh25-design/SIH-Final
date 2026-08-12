@@ -129,37 +129,89 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Auto-scroll feature cards
+    // Auto-scroll feature cards ("Explore Our Heritage Pillars")
     const featureCardsContainer = document.querySelector('.home-features-section .categories');
     if (featureCardsContainer) {
-        let autoScrollTimer = null;
-        const scrollSpeed = 0.7; // px per frame
+        const cards = featureCardsContainer.querySelectorAll('.category-card');
+        const prevBtn = document.getElementById('pillarsPrevBtn');
+        const nextBtn = document.getElementById('pillarsNextBtn');
+        let autoSlideTimer = null;
+        const slideIntervalTime = 3200; // 3.2 seconds per slide
 
-        const startAutoScroll = () => {
-            if (autoScrollTimer) return;
-            autoScrollTimer = setInterval(() => {
-                const maxScrollLeft = featureCardsContainer.scrollWidth - featureCardsContainer.clientWidth;
-                const nextPosition = featureCardsContainer.scrollLeft + scrollSpeed;
-
-                if (nextPosition >= maxScrollLeft - 1) {
-                    featureCardsContainer.scrollLeft = 0;
-                } else {
-                    featureCardsContainer.scrollLeft = nextPosition;
-                }
-            }, 16);
+        const getCardStep = () => {
+            if (!cards.length) return 340;
+            const firstCard = cards[0];
+            const gap = parseFloat(window.getComputedStyle(featureCardsContainer).gap) || 20;
+            return firstCard.offsetWidth + gap;
         };
 
-        const stopAutoScroll = () => {
-            if (autoScrollTimer) {
-                clearInterval(autoScrollTimer);
-                autoScrollTimer = null;
+        const slideNext = () => {
+            if (!cards.length) return;
+            const step = getCardStep();
+            const maxScrollLeft = featureCardsContainer.scrollWidth - featureCardsContainer.clientWidth;
+            const currentScroll = featureCardsContainer.scrollLeft;
+
+            if (currentScroll >= maxScrollLeft - 15) {
+                // Smooth loop back to beginning
+                featureCardsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                featureCardsContainer.scrollTo({ left: currentScroll + step, behavior: 'smooth' });
             }
         };
 
-        featureCardsContainer.addEventListener('mouseenter', stopAutoScroll);
-        featureCardsContainer.addEventListener('mouseleave', startAutoScroll);
+        const slidePrev = () => {
+            if (!cards.length) return;
+            const step = getCardStep();
+            const maxScrollLeft = featureCardsContainer.scrollWidth - featureCardsContainer.clientWidth;
+            const currentScroll = featureCardsContainer.scrollLeft;
 
-        startAutoScroll();
+            if (currentScroll <= 15) {
+                // Loop to end
+                featureCardsContainer.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+            } else {
+                featureCardsContainer.scrollTo({ left: currentScroll - step, behavior: 'smooth' });
+            }
+        };
+
+        const startAutoSlide = () => {
+            stopAutoSlide();
+            autoSlideTimer = setInterval(slideNext, slideIntervalTime);
+        };
+
+        const stopAutoSlide = () => {
+            if (autoSlideTimer) {
+                clearInterval(autoSlideTimer);
+                autoSlideTimer = null;
+            }
+        };
+
+        const resetAutoSlide = () => {
+            stopAutoSlide();
+            startAutoSlide();
+        };
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                slideNext();
+                resetAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                slidePrev();
+                resetAutoSlide();
+            });
+        }
+
+        featureCardsContainer.addEventListener('mouseenter', stopAutoSlide);
+        featureCardsContainer.addEventListener('mouseleave', startAutoSlide);
+        featureCardsContainer.addEventListener('touchstart', stopAutoSlide, { passive: true });
+        featureCardsContainer.addEventListener('touchend', () => {
+            setTimeout(startAutoSlide, 2500);
+        }, { passive: true });
+
+        startAutoSlide();
     }
 
     // Start Slider
