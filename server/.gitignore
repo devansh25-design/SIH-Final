@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Environment variables — contains DB credentials, never commit
+.env
+
+# Uploaded scan images (generated at runtime)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db

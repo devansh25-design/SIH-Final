@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Heritage Lens | Bharat Heritage Explorer — Point. Scan. Discover.</title>
+    <meta name="description" content="Heritage Lens uses AI-powered camera recognition to identify Indian monuments and heritage sites. Point your camera, scan, and discover verified cultural heritage information instantly.">
+    <meta name="theme-color" content="#0b1329">
+
+    <!-- Existing brand fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Existing site styles (for navbar consistency) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Heritage Lens dedicated styles -->
+    <link rel="stylesheet" href="css/heritage-lens.css">
+</head>
+
+<body class="hl-page">
+
+    <!-- ════════════════════════════════════════════════════════
+         NAVIGATION — Matches Bharat Heritage Explorer branding
+         ════════════════════════════════════════════════════════ -->
+    <header class="hl-navbar" role="banner">
+
+        <!-- Back to Home -->
+        <a href="index.html" class="hl-back-btn" aria-label="Back to Bharat Heritage Explorer home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+        </a>
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="hl-nav-brand" aria-label="Bharat Heritage Explorer home">
+            <svg class="hl-nav-brand-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="50" cy="50" r="46" stroke="url(#goldGradHL)" stroke-width="3" fill="rgba(15, 23, 42, 0.8)" />
+                <circle cx="50" cy="50" r="28" stroke="url(#goldGradHL)" stroke-width="1.5" stroke-dasharray="3 3" />
+                <path d="M50 15 L50 85 M15 50 L85 50 M25 25 L75 75 M25 75 L75 25" stroke="url(#goldGradHL)" stroke-width="1.2" opacity="0.6" />
+                <path d="M50 20 C40 34 30 46 50 80 C70 46 60 34 50 20 Z" fill="url(#goldGradHL)" />
+                <path d="M50 32 C44 40 38 46 50 72 C62 46 56 40 50 32 Z" fill="#0f172a" />
+                <circle cx="50" cy="50" r="6" fill="url(#goldGradHL)" />
+                <defs>
+                    <linearGradient id="goldGradHL" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%"   stop-color="#fbbf24" />
+                        <stop offset="50%"  stop-color="#f59e0b" />
+                        <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="hl-nav-brand-text">
+                <span class="hl-nav-brand-name">BHARAT</span>
+                <span class="hl-nav-brand-sub">HERITAGE EXPLORER</span>
+            </div>
+        </a>
+
+        <!-- Heritage Lens Feature Badge -->
+        <div class="hl-nav-feature-badge" aria-label="Current feature: Heritage Lens">
+            <span aria-hidden="true">📷</span>
+            Heritage Lens
+        </div>
+
+    </header>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 0 — INTRO / LANDING
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenIntro"
+        class="hl-screen hl-intro"
+        role="main"
+        aria-label="Heritage Lens introduction"
+    >
+        <!-- Decorative background -->
+        <div class="hl-intro-bg" aria-hidden="true">
+            <div class="hl-intro-bg-arc"></div>
+            <div class="hl-intro-bg-arc"></div>
+            <div class="hl-intro-bg-arc"></div>
+        </div>
+        <div class="hl-intro-glow-a" aria-hidden="true"></div>
+        <div class="hl-intro-glow-b" aria-hidden="true"></div>
+
+        <!-- Main content -->
+        <div class="hl-intro-content">
+
+            <!-- Feature label -->
+            <div class="hl-intro-label" aria-label="New feature by Bharat Heritage Explorer">
+                <span aria-hidden="true">✨</span>
+                NEW FEATURE — AI HERITAGE RECOGNITION
+            </div>
+
+            <!-- Hero camera icon with pulse rings -->
+            <div class="hl-intro-icon" aria-hidden="true">
+                <div class="hl-intro-icon-ring"></div>
+                <div class="hl-intro-icon-ring-2"></div>
+                <div class="hl-intro-icon-circle">📷</div>
+            </div>
+
+            <!-- Main heading -->
+            <h1 class="hl-intro-heading">
+                Heritage<br>
+                <span class="hl-intro-heading-em">Lens</span>
+            </h1>
+
+            <!-- Primary tagline -->
+            <p class="hl-intro-tagline">
+                Point your camera. Discover the story.
+            </p>
+
+            <!-- Secondary tagline -->
+            <p class="hl-intro-tagline-2" aria-hidden="true">
+                See it · Scan it · Understand it
+            </p>
+
+            <!-- Description -->
+            <p class="hl-intro-desc">
+                Use your camera to identify Indian monuments and instantly discover their history, architecture and cultural significance — powered by AI, verified by Bharat Heritage Explorer.
+            </p>
+
+            <!-- Feature pills -->
+            <div class="hl-intro-features" role="list" aria-label="Heritage Lens features">
+                <div class="hl-intro-feature-pill" role="listitem">
+                    <span aria-hidden="true">🏛️</span>
+                    Monument Recognition
+                </div>
+                <div class="hl-intro-feature-pill" role="listitem">
+                    <span aria-hidden="true">📜</span>
+                    Verified History
+                </div>
+                <div class="hl-intro-feature-pill" role="listitem">
+                    <span aria-hidden="true">📍</span>
+                    Location & Map
+                </div>
+                <div class="hl-intro-feature-pill" role="listitem">
+                    <span aria-hidden="true">🔒</span>
+                    Privacy First
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hl-intro-actions" role="group" aria-label="Heritage Lens actions">
+                <button
+                    id="hlOpenCameraBtn"
+                    class="hl-btn-camera"
+                    type="button"
+                    aria-label="Open camera for live monument scanning"
+                >
+                    <span class="hl-btn-camera-icon" aria-hidden="true">📷</span>
+                    Open Camera
+                </button>
+
+                <button
+                    id="hlUploadBtnIntro"
+                    class="hl-btn-upload"
+                    type="button"
+                    aria-label="Upload an image from your device"
+                >
+                    <span aria-hidden="true">↑</span>
+                    Upload Image
+                </button>
+            </div>
+
+            <!-- Privacy note -->
+            <p class="hl-privacy-note" role="note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Your image is used only for heritage recognition. Nothing is stored.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 1 — CAMERA INTERFACE
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenCamera"
+        class="hl-screen hl-camera-screen"
+        role="main"
+        aria-label="Heritage Lens camera"
+        aria-live="polite"
+    >
+
+        <!-- Top bar -->
+        <div class="hl-camera-topbar" role="toolbar" aria-label="Camera controls">
+            <a href="#" class="hl-back-btn" data-hl-back aria-label="Go back to Heritage Lens intro">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+            <span class="hl-camera-topbar-title">Heritage Lens</span>
+            <button
+                id="hlCameraCloseBtn"
+                class="hl-camera-close-btn"
+                type="button"
+                aria-label="Close camera"
+            >✕</button>
+        </div>
+
+        <!-- Live video element -->
+        <video
+            id="hlCameraVideo"
+            autoplay
+            muted
+            playsinline
+            aria-label="Live camera preview"
+            aria-hidden="true"
+        ></video>
+
+        <!-- Hidden capture canvas -->
+        <canvas id="hlCaptureCanvas" aria-hidden="true"></canvas>
+
+        <!-- Viewfinder frame overlay -->
+        <div class="hl-camera-viewfinder" aria-hidden="true" role="presentation">
+            <div class="hl-vf-corner hl-vf-corner--tl"></div>
+            <div class="hl-vf-corner hl-vf-corner--tr"></div>
+            <div class="hl-vf-corner hl-vf-corner--bl"></div>
+            <div class="hl-vf-corner hl-vf-corner--br"></div>
+            <div class="hl-vf-scan-line" aria-hidden="true"></div>
+            <div class="hl-vf-label" aria-hidden="true">ALIGN<br>HERITAGE<br>HERE</div>
+        </div>
+
+        <!-- Status message -->
+        <div class="hl-camera-status" role="status" aria-live="polite">
+            <span id="hlCameraStatusText" class="hl-camera-status-text">Starting camera...</span>
+        </div>
+
+        <!-- Bottom controls -->
+        <div class="hl-camera-controls" role="group" aria-label="Camera capture controls">
+
+            <!-- Upload from gallery -->
+            <button
+                id="hlUploadBtnCamera"
+                class="hl-camera-side-btn"
+                type="button"
+                aria-label="Upload image from your device gallery"
+            >
+                <span class="hl-camera-side-btn-icon" aria-hidden="true">↑</span>
+                Upload
+            </button>
+
+            <!-- Main capture button -->
+            <button
+                id="hlCaptureBtn"
+                class="hl-capture-btn"
+                type="button"
+                aria-label="Capture photo of heritage monument"
+            >
+                <span class="hl-sr-only">Capture photo</span>
+            </button>
+
+            <!-- Gallery / spacer (mirrors upload for symmetry) -->
+            <button
+                class="hl-camera-side-btn"
+                type="button"
+                aria-label="Upload image from gallery"
+                onclick="document.getElementById('hlUploadBtnCamera').click()"
+            >
+                <span class="hl-camera-side-btn-icon" aria-hidden="true">🖼️</span>
+                Gallery
+            </button>
+
+        </div>
+
+        <!-- ── STATE: CAMERA STARTING ── -->
+        <div
+            id="hlOverlayStarting"
+            class="hl-camera-state-overlay"
+            role="status"
+            aria-live="polite"
+            aria-label="Camera starting"
+        >
+            <div class="hl-spinner" aria-hidden="true"></div>
+            <p class="hl-state-heading">Starting Camera</p>
+            <p class="hl-state-text">Please allow camera access when prompted...</p>
+        </div>
+
+        <!-- ── STATE: CAMERA PERMISSION DENIED ── -->
+        <div
+            id="hlOverlayDenied"
+            class="hl-camera-state-overlay hl-hidden"
+            role="alert"
+            aria-live="assertive"
+            aria-label="Camera access denied"
+        >
+            <div class="hl-state-icon" aria-hidden="true">🚫</div>
+            <p class="hl-state-heading">Camera Access Required</p>
+            <p class="hl-state-text">
+                Camera access is required for live monument scanning.<br>
+                Please allow camera access in your browser settings and try again.
+            </p>
+            <div class="hl-state-actions">
+                <button
+                    id="hlTryAgainBtn"
+                    class="hl-btn-primary"
+                    type="button"
+                    aria-label="Try requesting camera access again"
+                >
+                    🔄 Try Again
+                </button>
+                <button
+                    id="hlUploadInsteadBtn"
+                    class="hl-btn-secondary"
+                    type="button"
+                    aria-label="Upload an image instead of using camera"
+                >
+                    ↑ Upload Image Instead
+                </button>
+            </div>
+        </div>
+
+        <!-- ── STATE: CAMERA NOT SUPPORTED ── -->
+        <div
+            id="hlOverlayUnsupported"
+            class="hl-camera-state-overlay hl-hidden"
+            role="alert"
+            aria-live="assertive"
+            aria-label="Camera not supported"
+        >
+            <div class="hl-state-icon" aria-hidden="true">📵</div>
+            <p class="hl-state-heading">Camera Not Available</p>
+            <p class="hl-state-text">
+                Your browser or device does not support camera access.<br>
+                You can still identify heritage sites by uploading an image.
+            </p>
+            <div class="hl-state-actions">
+                <button
+                    id="hlUploadUnsupportedBtn"
+                    class="hl-btn-primary"
+                    type="button"
+                    aria-label="Upload an image from your device"
+                >
+                    ↑ Upload Image
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 2 — IMAGE PREVIEW
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenPreview"
+        class="hl-screen hl-preview-screen"
+        role="main"
+        aria-label="Image preview before scanning"
+    >
+        <p class="hl-preview-label" aria-hidden="true">HERITAGE LENS</p>
+        <h1 class="hl-preview-heading">Ready to Scan?</h1>
+        <p class="hl-preview-sub">Review your image before sending it for heritage recognition.</p>
+
+        <!-- Preview card -->
+        <div class="hl-preview-card" role="figure" aria-label="Captured or uploaded image preview">
+            <div class="hl-preview-img-wrap">
+                <img
+                    id="hlPreviewImage"
+                    src=""
+                    alt="Captured monument for heritage recognition"
+                    loading="lazy"
+                >
+            </div>
+            <div class="hl-preview-card-info">
+                <span class="hl-preview-card-label">Image Ready</span>
+                <div class="hl-preview-card-ready-dot" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="hl-preview-actions" role="group" aria-label="Preview actions">
+            <button
+                id="hlRetakeBtn"
+                class="hl-btn-secondary"
+                type="button"
+                aria-label="Retake photo or upload different image"
+            >
+                <span aria-hidden="true">↻</span>
+                Retake
+            </button>
+            <button
+                id="hlScanBtn"
+                class="hl-btn-primary"
+                type="button"
+                aria-label="Scan this image for heritage recognition"
+            >
+                <span aria-hidden="true">🔍</span>
+                Scan Heritage
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 3 — SCANNING / ANALYZING
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenScanning"
+        class="hl-screen hl-scanning-screen"
+        role="main"
+        aria-label="Heritage recognition in progress"
+        aria-live="polite"
+        aria-busy="true"
+    >
+        <p class="hl-scanning-label" aria-hidden="true">AI HERITAGE RECOGNITION</p>
+        <h1 class="hl-scanning-heading">Analyzing Heritage...</h1>
+
+        <!-- Scanning image with animated scan line -->
+        <div class="hl-scanning-frame" role="img" aria-label="Image being analyzed for heritage recognition">
+            <img
+                id="hlScanningImage"
+                src=""
+                alt="Monument image being analyzed"
+            >
+            <div class="hl-scanning-frame-overlay" aria-hidden="true"></div>
+            <div class="hl-scan-line-anim" aria-hidden="true"></div>
+            <div class="hl-scan-line-glow" aria-hidden="true"></div>
+            <div class="hl-scanning-frame-corner hl-scanning-frame-corner--tl" aria-hidden="true"></div>
+            <div class="hl-scanning-frame-corner hl-scanning-frame-corner--tr" aria-hidden="true"></div>
+            <div class="hl-scanning-frame-corner hl-scanning-frame-corner--bl" aria-hidden="true"></div>
+            <div class="hl-scanning-frame-corner hl-scanning-frame-corner--br" aria-hidden="true"></div>
+        </div>
+
+        <!-- Progress steps -->
+        <div class="hl-scanning-steps" role="list" aria-label="Recognition progress steps">
+            <div class="hl-scanning-step" role="listitem">
+                <div class="hl-scanning-step-dot" aria-hidden="true"></div>
+                <span class="hl-scanning-step-text">Reading image...</span>
+            </div>
+            <div class="hl-scanning-step" role="listitem">
+                <div class="hl-scanning-step-dot" aria-hidden="true"></div>
+                <span class="hl-scanning-step-text">Identifying monument...</span>
+            </div>
+            <div class="hl-scanning-step" role="listitem">
+                <div class="hl-scanning-step-dot" aria-hidden="true"></div>
+                <span class="hl-scanning-step-text">Checking recognition confidence...</span>
+            </div>
+            <div class="hl-scanning-step" role="listitem">
+                <div class="hl-scanning-step-dot" aria-hidden="true"></div>
+                <span class="hl-scanning-step-text">Finding verified heritage information...</span>
+            </div>
+        </div>
+
+        <!-- Notice -->
+        <p class="hl-scanning-notice" role="note">
+            <span aria-hidden="true">🔒</span>
+            Image processed securely · Not stored permanently
+        </p>
+
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 4 — HERITAGE RESULT
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenResult"
+        class="hl-screen hl-result-screen"
+        role="main"
+        aria-label="Heritage recognition result"
+    >
+
+        <!-- Hero image with confidence badge -->
+        <div class="hl-result-hero" role="img" aria-label="Heritage monument image">
+            <img
+                id="hlResultHeroImage"
+                src=""
+                alt="Identified heritage monument"
+            >
+            <div class="hl-result-hero-overlay" aria-hidden="true"></div>
+            <div class="hl-result-hero-badges">
+                <!-- Confidence badge -->
+                <div
+                    id="hlResultConfBadge"
+                    class="hl-confidence-badge hl-confidence-badge--high"
+                    role="status"
+                    aria-label="AI recognition confidence"
+                >
+                    <span aria-hidden="true">🤖</span>
+                    <span id="hlResultConfPct" class="hl-confidence-pct">96%</span>
+                    <span id="hlResultConfLevel">High confidence</span>
+                </div>
+                <!-- AI recognition tag -->
+                <div class="hl-ai-tag" aria-label="This result is from AI recognition">AI Recognition</div>
+            </div>
+        </div>
+
+        <!-- Result body -->
+        <div class="hl-result-body">
+
+            <!-- Monument identity -->
+            <div class="hl-result-identity">
+                <h1 id="hlResultName" class="hl-result-name">Amer Fort</h1>
+                <div class="hl-result-location" role="note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span id="hlResultLocation">Jaipur, Rajasthan</span>
+                </div>
+            </div>
+
+            <!-- Meta chips -->
+            <div id="hlResultMetaRow" class="hl-result-meta-row" role="list" aria-label="Monument details">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Confidence meter -->
+            <div class="hl-confidence-meter" role="meter" aria-label="AI recognition confidence level">
+                <div class="hl-confidence-meter-header">
+                    <span class="hl-confidence-meter-label">AI Confidence</span>
+                    <span id="hlConfBarPct" class="hl-confidence-meter-value">96% Confidence</span>
+                </div>
+                <div class="hl-confidence-bar-track" aria-hidden="true">
+                    <div id="hlConfBarFill" class="hl-confidence-bar-fill hl-confidence-bar-fill--high" style="width: 0%"></div>
+                </div>
+                <p id="hlConfBarLevel" class="hl-confidence-level-text hl-confidence-level-text--high">High confidence</p>
+            </div>
+
+            <!-- Medium confidence confirmation (shown only for MEDIUM level) -->
+            <div id="hlMediumConfSection" class="hl-medium-confirm hl-hidden" role="dialog" aria-label="Confirm monument identification">
+                <p id="hlMediumConfText" class="hl-medium-confirm-text">Is this Rani ki Vav?</p>
+                <div class="hl-medium-confirm-actions">
+                    <button
+                        id="hlMediumYesBtn"
+                        class="hl-btn-primary"
+                        type="button"
+                        aria-label="Confirm this monument identification and continue"
+                    >
+                        ✓ Yes, Continue
+                    </button>
+                    <button
+                        id="hlMediumScanAgainBtn"
+                        class="hl-btn-secondary"
+                        type="button"
+                        aria-label="Reject this result and scan again"
+                    >
+                        🔍 Scan Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Verified info banner -->
+            <div class="hl-verified-banner" role="note" aria-label="Verified heritage information">
+                <span class="hl-verified-banner-icon" aria-hidden="true">✅</span>
+                <div>
+                    <div class="hl-verified-banner-text">Verified Heritage Information</div>
+                    <div class="hl-verified-banner-sub">Information verified from Bharat Heritage Explorer database.</div>
+                </div>
+            </div>
+
+            <!-- Accordion info sections -->
+            <div class="hl-result-sections" role="region" aria-label="Heritage information">
+
+                <!-- History -->
+                <div class="hl-result-section hl-section-open" id="hlSectionHistory">
+                    <div
+                        class="hl-result-section-header"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="true"
+                        aria-controls="hlHistoryBody"
+                        aria-label="History section"
+                    >
+                        <span class="hl-result-section-icon" aria-hidden="true">📜</span>
+                        <span class="hl-result-section-title">History</span>
+                        <svg class="hl-result-section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div id="hlHistoryBody" class="hl-result-section-body">
+                        <p id="hlResultHistory" class="hl-result-section-text">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="hl-result-section" id="hlSectionArchitecture">
+                    <div
+                        class="hl-result-section-header"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
+                        aria-controls="hlArchBody"
+                        aria-label="Architecture section"
+                    >
+                        <span class="hl-result-section-icon" aria-hidden="true">🏗️</span>
+                        <span class="hl-result-section-title">Architecture</span>
+                        <svg class="hl-result-section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div id="hlArchBody" class="hl-result-section-body">
+                        <p id="hlResultArchitecture" class="hl-result-section-text">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Cultural Significance -->
+                <div class="hl-result-section" id="hlSectionCultural">
+                    <div
+                        class="hl-result-section-header"
+                        role="button"
+                        tabindex="0"
+                        aria-expanded="false"
+                        aria-controls="hlCulturalBody"
+                        aria-label="Cultural significance section"
+                    >
+                        <span class="hl-result-section-icon" aria-hidden="true">🎭</span>
+                        <span class="hl-result-section-title">Cultural Significance</span>
+                        <svg class="hl-result-section-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div id="hlCulturalBody" class="hl-result-section-body">
+                        <p id="hlResultCultural" class="hl-result-section-text">Loading...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Location info -->
+            <div class="hl-result-map-preview" role="complementary" aria-label="Monument location">
+                <div class="hl-result-map-icon" aria-hidden="true">📍</div>
+                <div class="hl-result-map-info">
+                    <div id="hlResultMapTitle" class="hl-result-map-title">Jaipur, Rajasthan</div>
+                    <div id="hlResultMapCoords" class="hl-result-map-coords">26.9855°N, 75.8513°E</div>
+                </div>
+            </div>
+
+            <div class="hl-divider" aria-hidden="true"></div>
+
+            <!-- Action buttons -->
+            <div class="hl-result-actions" role="group" aria-label="Heritage result actions">
+                <button
+                    id="hlExploreNearbyBtn"
+                    class="hl-btn-secondary"
+                    type="button"
+                    aria-label="Explore nearby heritage sites"
+                >
+                    🗺️ Explore Nearby
+                </button>
+                <button
+                    id="hlViewMapBtn"
+                    class="hl-btn-secondary"
+                    type="button"
+                    aria-label="View monument location on Google Maps"
+                >
+                    📍 View on Map
+                </button>
+                <button
+                    id="hlScanAnotherBtn"
+                    class="hl-btn-primary"
+                    type="button"
+                    aria-label="Scan another heritage monument"
+                >
+                    🔍 Scan Another
+                </button>
+            </div>
+
+            <div style="margin-top: 12px;">
+                <button
+                    id="hlShareBtn"
+                    class="hl-btn-secondary"
+                    type="button"
+                    style="width: 100%;"
+                    aria-label="Share this heritage discovery"
+                >
+                    <span aria-hidden="true">↗</span>
+                    Share Discovery
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCREEN 5 — ERROR
+         ════════════════════════════════════════════════════════ -->
+    <section
+        id="hlScreenError"
+        class="hl-screen hl-error-screen"
+        role="main"
+        aria-label="Error information"
+        aria-live="assertive"
+    >
+        <div id="hlErrorIconWrap" class="hl-error-icon-wrap" aria-hidden="true">
+            <span id="hlErrorIcon">❌</span>
+        </div>
+        <h1 id="hlErrorHeading" class="hl-error-heading">Something Went Wrong</h1>
+        <p id="hlErrorDesc" class="hl-error-desc">
+            An error occurred during heritage recognition. Please try again.
+        </p>
+
+        <!-- Tips box (shown dynamically) -->
+        <div id="hlErrorTipsBox" class="hl-tips-box hl-hidden" role="note" aria-label="Tips for better results">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Action buttons (populated by JS) -->
+        <div id="hlErrorActions" class="hl-error-actions" role="group" aria-label="Error recovery options">
+            <!-- Populated by JS -->
+        </div>
+
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         HIDDEN FILE INPUT (upload)
+         ════════════════════════════════════════════════════════ -->
+    <input
+        id="hlFileInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+        aria-label="Select an image from your device"
+    >
+
+    <!-- ════════════════════════════════════════════════════════
+         TOAST NOTIFICATION CONTAINER
+         ════════════════════════════════════════════════════════ -->
+    <div
+        id="hlToastContainer"
+        class="hl-toast-container"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- ════════════════════════════════════════════════════════
+         SCRIPTS
+         ════════════════════════════════════════════════════════ -->
+    <script src="js/heritage-lens.js"></script>
+
+</body>
+
+</html>
